@@ -620,7 +620,7 @@
 </nav>
     <div class="main">
       <div class="w3-container ad">
-  <a href="https://code.labstack.com/program">
+  <a href="https://code.labstack.com/new">
     <img
       style="margin-bottom: 8px;"
       src="https://echo.labstack.com//images/code.png"
@@ -672,7 +672,7 @@ with data and sends a text/html response with status code. Templates can be regi
 }
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Template</span>) <span style="color:#a6e22e">Render</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Writer</span>, <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">data</span> <span style="color:#66d9ef">interface</span>{}, <span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">ExecuteTemplate</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">data</span>)
+    <span style="color:#a6e22e">rn</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">templates</span>.<span style="color:#a6e22e">ExecuteTemplate</span>(<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">data</span>)
 }
 </code></pre></div></li>
 <li>
@@ -692,7 +692,7 @@ with data and sends a text/html response with status code. Templates can be regi
 <li>
 <p>Render a template inside your handler</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Hello</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Render</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>)
+    <span style="color:#a6e22e">rn</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Render</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>)
 }
 </code></pre></div></li>
 </ol>
