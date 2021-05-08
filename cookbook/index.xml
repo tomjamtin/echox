@@ -154,11 +154,11 @@ Server server.go
       <guid>https://echo.labstack.com/cookbook/jwt/</guid>
       <description>JWT authentication using HS256 algorithm. JWT is retrieved from Authorization request header.  Server using Map claims server.go
  Server using custom claims server.go
+ Server using a user-defined KeyFunc server.go
  Client curl
 Login Login using username and password to retrieve a token.
 curl -X POST -d &amp;#39;username=jon&amp;#39; -d &amp;#39;password=shhh!&amp;#39; localhost:1323/login Response
-{ &amp;#34;token&amp;#34;: &amp;#34;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NjE5NTcxMzZ9.RB3arc4-OyzASAaUhC2W3ReWaXAt_z2Fd3BN4aWTgEY&amp;#34; } Request Request a restricted resource using the token in Authorization request header.
-curl localhost:1323/restricted -H &amp;#34;Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NjE5NTcxMzZ9.RB3arc4-OyzASAaUhC2W3ReWaXAt_z2Fd3BN4aWTgEY&amp;#34; Response</description>
+{ &amp;#34;token&amp;#34;: &amp;#34;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NjE5NTcxMzZ9.RB3arc4-OyzASAaUhC2W3ReWaXAt_z2Fd3BN4aWTgEY&amp;#34; } Request Request a restricted resource using the token in Authorization request header.</description>
     </item>
     
     <item>

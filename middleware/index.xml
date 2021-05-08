@@ -126,7 +126,7 @@ Custom Configuration By default, traces are sent to localhost Jaeger agent insta
  For valid token, it sets the user in context and calls next handler. For invalid token, it sends &amp;ldquo;401 - Unauthorized&amp;rdquo; response. For missing or invalid Authorization header, it sends &amp;ldquo;400 - Bad Request&amp;rdquo;.  Usage
 e.Use(middleware.JWT([]byte(&amp;quot;secret&amp;quot;)))
 Custom Configuration Usage
-e.Use(middleware.JWTWithConfig(middleware.JWTConfig{ SigningKey: []byte(&amp;#34;secret&amp;#34;), TokenLookup: &amp;#34;query:token&amp;#34;, })) Configuration JWTConfig struct { // Skipper defines a function to skip middleware.  Skipper Skipper // Signing key to validate token.</description>
+e.Use(middleware.JWTWithConfig(middleware.JWTConfig{ SigningKey: []byte(&amp;#34;secret&amp;#34;), TokenLookup: &amp;#34;query:token&amp;#34;, })) Configuration JWTConfig struct { // Skipper defines a function to skip middleware.  Skipper Skipper // BeforeFunc defines a function which is executed just before the middleware.</description>
     </item>
     
     <item>
