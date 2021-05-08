@@ -690,7 +690,8 @@
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Possible values:
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// - &#34;header:&lt;name&gt;&#34;
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// - &#34;query:&lt;name&gt;&#34;
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">KeyLookup</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;key_lookup&#34;`</span>
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// - &#34;form:&lt;name&gt;&#34;
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">KeyLookup</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`yaml:&#34;key_lookup&#34;`</span>
 
   <span style="color:#75715e">// AuthScheme to be used in the Authorization header.
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Optional. Default value &#34;Bearer&#34;.
@@ -699,6 +700,10 @@
   <span style="color:#75715e">// Validator is a function to validate key.
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Required.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Validator</span> <span style="color:#a6e22e">KeyAuthValidator</span>
+
+  <span style="color:#75715e">// ErrorHandler defines a function which is executed for an invalid key.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// It may be used to define a custom error.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">ErrorHandler</span> <span style="color:#a6e22e">KeyAuthErrorHandler</span>
 }
 </code></pre></div><p><em>Default Configuration</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultKeyAuthConfig</span> = <span style="color:#a6e22e">KeyAuthConfig</span>{
