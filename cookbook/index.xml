@@ -48,8 +48,8 @@ Create User curl -X POST \  -H &amp;#39;Content-Type: application/json&amp;#39; 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://echo.labstack.com/cookbook/embed-resources/</guid>
-      <description>With go.rice server.go
- Source Code With go 1.16 embed feature server.go
+      <description>With go 1.16 embed feature server.go
+ Source Code With go.rice server.go
  Source Code </description>
     </item>
     

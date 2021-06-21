@@ -68,7 +68,7 @@ e.Use(func(next echo.HandlerFunc) echo.HandlerFunc { return func(c echo.</descri
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://echo.labstack.com/guide/installation/</guid>
-      <description>Prerequisites  Install Go Set GOPATH  Using go get $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ go get -u github.com/labstack/echo/... Using dep $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ dep ensure -add github.com/labstack/echo@^3.1 Using glide $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ glide get github.com/labstack/echo#~3.1 Using govendor $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ govendor fetch github.com/labstack/echo@v3.1 Echo follows semantic versioning managed through GitHub releases, specific version of Echo can be installed using a package manager.</description>
+      <description>Prerequisites  Install Go  Using go get $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ go get -u github.com/labstack/echo/v4 Using dep $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ dep ensure -add github.com/labstack/echo@^4.3 Using glide $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ glide get github.com/labstack/echo#~4.3 Using govendor $ cd &amp;lt;PROJECT IN $GOPATH&amp;gt; $ govendor fetch github.com/labstack/echo@v4.3 Echo follows semantic versioning managed through GitHub releases, specific version of Echo can be installed using a package manager.</description>
     </item>
     
     <item>
@@ -123,6 +123,17 @@ func(c echo.Context) error { return c.HTML(http.StatusOK, &amp;#34;&amp;lt;stron
       <description>Echo&amp;rsquo;s router is based on radix tree, making route lookup really fast. It leverages sync pool to reuse memory and achieve zero dynamic memory allocation with no GC overhead.
 Routes can be registered by specifying HTTP method, path and a matching handler. For example, code below registers a route for method GET, path /hello and a handler which sends Hello, World! HTTP response.
 // Handler func hello(c echo.Context) error { return c.</description>
+    </item>
+    
+    <item>
+      <title>Starting HTTP(S) server with Echo</title>
+      <link>https://echo.labstack.com/guide/http_server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://echo.labstack.com/guide/http_server/</guid>
+      <description>Echo provides following convenience methods to start HTTP server with Echo as a request handler:
+ Echo.Start(address string) Echo.StartTLS(address string, certFile, keyFile interface{}) Echo.StartAutoTLS(address string) Echo.StartH2CServer(address string, h2s *http2.Server) Echo.StartServer(s *http.Server)  HTTP Server Echo.Start is convenience method that starts http server with Echo serving requests.
+func main() { e := echo.New() // add middleware and routes  // ...  if err := e.Start(&amp;#34;:8080&amp;#34;); err != http.ErrServerClosed { log.Fatal(err) } } Following is equivalent to Echo.</description>
     </item>
     
     <item>

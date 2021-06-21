@@ -118,6 +118,15 @@
         </li>
         
         <li>
+          <a href="/guide/http_server">
+             HTTP(s) Server
+          </a>
+          <ul class="menu-l3">
+            
+          </ul>
+        </li>
+        
+        <li>
           <a href="/guide/ip-address">
              IP Address
           </a>
@@ -640,6 +649,16 @@
             <section>
               
               
+                <style>
+                    .hanchor {
+                        font-size: 80%;
+                        visibility: hidden;
+                        color: silver;
+                    }
+                    h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+                        visibility: visible;
+                    }
+                </style>
               <ul class="breadcrumb">
                 
                 
@@ -660,7 +679,7 @@
                 
               </ul>
               <h1>Binding Request Data</h1>
-              <h2 id="bind-using-struct-tags">Bind using struct tags</h2>
+                <h2 id="bind-using-struct-tags">Bind using struct tags<a href="#bind-using-struct-tags" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p>Echo provides following method to bind data from different sources (path params, query params, request body) to structure using
 <code>Context#Bind(i interface{})</code> method.
 The default binder supports decoding application/json, application/xml and
@@ -711,7 +730,7 @@ and <a href="https://golang.org/pkg/net/http/#Request.ParseMultipartForm">MIMEMu
 }
 </code></pre></div></li>
 </ul>
-<h3 id="example">Example</h3>
+<h3 id="example">Example<a href="#example" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <p>Example below binds the request payload into <code>User</code> struct based on tags:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// User
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
@@ -734,17 +753,17 @@ and <a href="https://golang.org/pkg/net/http/#Request.ParseMultipartForm">MIMEMu
   
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">u</span>)
 }
-</code></pre></div><h3 id="json-data">JSON Data</h3>
+</code></pre></div><h3 id="json-data">JSON Data<a href="#json-data" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X POST http://localhost:1323/users <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;Joe&#34;,&#34;email&#34;:&#34;joe@labstack&#34;}&#39;</span>
-</code></pre></div><h3 id="form-data">Form Data</h3>
+</code></pre></div><h3 id="form-data">Form Data<a href="#form-data" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X POST http://localhost:1323/users <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;name=Joe&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;email=joe@labstack.com&#39;</span>
-</code></pre></div><h3 id="query-parameters">Query Parameters</h3>
+</code></pre></div><h3 id="query-parameters">Query Parameters<a href="#query-parameters" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X GET http://localhost:1323/users<span style="color:#ae81ff">\?</span>name<span style="color:#ae81ff">\=</span>Joe<span style="color:#ae81ff">\&amp;</span>email<span style="color:#ae81ff">\=</span>joe@labstack.com
-</code></pre></div><h2 id="fast-binding-with-dedicated-helpers">Fast binding with dedicated helpers</h2>
+</code></pre></div><h2 id="fast-binding-with-dedicated-helpers">Fast binding with dedicated helpers<a href="#fast-binding-with-dedicated-helpers" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p>For binding data found in a request a handful of helper functions are provided. This will allow binding of query parameters, path parameters or data found in the body like forms or JSON data.</p>
 <p>Following functions provide a handful of methods for binding to Go native types from request query or path parameters. These binders offer a fluent syntax and can be chained to configure, execute binding and handle errors.</p>
 <ul>
@@ -770,7 +789,7 @@ the binder call chain. Fail fast is enabled by default and should be disabled wh
   <span style="color:#a6e22e">Int64s</span>(<span style="color:#e6db74">&#34;ids&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">opts</span>.<span style="color:#a6e22e">IDs</span>).
   <span style="color:#a6e22e">Bool</span>(<span style="color:#e6db74">&#34;active&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">opts</span>.<span style="color:#a6e22e">Active</span>).
   <span style="color:#a6e22e">BindError</span>() <span style="color:#75715e">// returns first binding error
-</span></code></pre></div><h3 id="supported-types">Supported types</h3>
+</span></code></pre></div><h3 id="supported-types">Supported types<a href="#supported-types" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <p>Types that are supported:</p>
 <ul>
 <li>bool</li>
@@ -802,7 +821,7 @@ the binder call chain. Fail fast is enabled by default and should be disabled wh
 <li><code>Must&lt;Type&gt;s(&quot;param&quot;, &amp;destination)</code> - (for slices) parameter value is required to exist, binds it to given destination of that type i.e <code>MustInt64s(...)</code>.</li>
 </ul>
 <p>for some slice types <code>BindWithDelimiter(&quot;param&quot;, &amp;dest, &quot;,&quot;)</code> supports splitting parameter values before type conversion is done. For example URL <code>/api/search?id=1,2,3&amp;id=1</code> can be bind to <code>[]int64{1,2,3,1}</code></p>
-<h2 id="custom-binder">Custom Binder</h2>
+<h2 id="custom-binder">Custom Binder<a href="#custom-binder" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p>Custom binder can be registered using <code>Echo#Binder</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">CustomBinder</span> <span style="color:#66d9ef">struct</span> {}
 
