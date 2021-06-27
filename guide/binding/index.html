@@ -739,7 +739,7 @@ and <a href="https://golang.org/pkg/net/http/#Request.ParseMultipartForm">MIMEMu
 }
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/users&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
   <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">User</span>)
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Bind</span>(<span style="color:#a6e22e">u</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Bind</span>(<span style="color:#a6e22e">u</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
     <span style="color:#66d9ef">return</span>
   }
   <span style="color:#75715e">// To avoid security flaws try to avoid passing bound structs directly to other methods 
@@ -828,7 +828,7 @@ the binder call chain. Fail fast is enabled by default and should be disabled wh
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">cb</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CustomBinder</span>) <span style="color:#a6e22e">Bind</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">interface</span>{}, <span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) (<span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
   <span style="color:#75715e">// You may use default binder
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">DefaultBinder</span>)
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Bind</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">ErrUnsupportedMediaType</span> {
+  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Bind</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">ErrUnsupportedMediaType</span> {
     <span style="color:#66d9ef">return</span>
   }
 
