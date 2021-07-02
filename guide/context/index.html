@@ -706,6 +706,9 @@ custom APIs.</p>
 </code></pre></div><blockquote>
 <p>This middleware should be registered before any other middleware.</p>
 </blockquote>
+<blockquote>
+<p>The custom context cannot be defined in a middleware before the router ran (Pre)</p>
+</blockquote>
 <p><strong>Use in handler</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">error</span> {
 	<span style="color:#a6e22e">cc</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">CustomContext</span>)

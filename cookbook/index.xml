@@ -98,8 +98,6 @@ Create User curl -X POST \  -H &amp;#39;Content-Type: application/json&amp;#39; 
       <guid>https://echo.labstack.com/cookbook/graceful-shutdown/</guid>
       <description>Using http.Server#Shutdown() server.go
   Requires go1.8+
- Using grace server.go
- Using graceful server.go
  Source Code </description>
     </item>
     
