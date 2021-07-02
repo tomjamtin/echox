@@ -721,7 +721,17 @@ See <a href="https://echo.labstack.com/guide/binding/">Binding Data</a></p>
 <p>Echo doesn&rsquo;t have built-in data validation capabilities, however, you can register
 a custom validator using <code>Echo#Validator</code> and leverage third-party <a href="https://github.com/avelino/awesome-go#validation">libraries</a>.</p>
 <p>Example below uses <a href="https://github.com/go-playground/validator">https://github.com/go-playground/validator</a> framework for validation:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> (
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+  <span style="color:#e6db74">&#34;net/http&#34;</span>
+  
+	<span style="color:#e6db74">&#34;github.com/go-playground/validator&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/labstack/echo/v4/middleware&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> (
   <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
     <span style="color:#a6e22e">Name</span>  <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;name&#34; validate:&#34;required&#34;`</span>
     <span style="color:#a6e22e">Email</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;email&#34; validate:&#34;required,email&#34;`</span>
@@ -734,7 +744,8 @@ a custom validator using <code>Echo#Validator</code> and leverage third-party <a
 
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">cv</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CustomValidator</span>) <span style="color:#a6e22e">Validate</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#66d9ef">error</span> {
   <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cv</span>.<span style="color:#a6e22e">validator</span>.<span style="color:#a6e22e">Struct</span>(<span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">NewHTTPError</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusInternalServerError</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
+    <span style="color:#75715e">// Optionally, you could return the error to give each route more control over the status code
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">NewHTTPError</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
   }
   <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
 }
@@ -748,7 +759,7 @@ a custom validator using <code>Echo#Validator</code> and leverage third-party <a
       <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">NewHTTPError</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
     }
     <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Validate</span>(<span style="color:#a6e22e">u</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">NewHTTPError</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusBadRequest</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
     }
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">u</span>)
   })
