@@ -688,12 +688,13 @@ application/x-www-form-urlencoded data based on the Content-Type header.</p>
 <ul>
 <li><code>query</code> - source is request query parameters.</li>
 <li><code>param</code> - source is route path parameter.</li>
+<li><code>header</code> - source is header parameter.</li>
 <li><code>form</code> - source is form. Values are taken from query and request body. Uses Go standard library form parsing.</li>
 <li><code>json</code> - source is request body. Uses Go <a href="https://golang.org/pkg/encoding/json/">json</a> package for unmarshalling.</li>
 <li><code>xml</code> - source is request body. Uses Go <a href="https://golang.org/pkg/encoding/xml/">xml</a> package for unmarshalling.</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`param:&#34;id&#34; query:&#34;id&#34; form:&#34;id&#34; json:&#34;id&#34; xml:&#34;id&#34;`</span>
+  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`param:&#34;id&#34; query:&#34;id&#34; header:&#34;id&#34; form:&#34;id&#34; json:&#34;id&#34; xml:&#34;id&#34;`</span>
 }
 </code></pre></div><p>Request data is bound to the struct in given order:</p>
 <ol>
@@ -703,7 +704,7 @@ application/x-www-form-urlencoded data based on the Content-Type header.</p>
 </ol>
 <p>Notes:</p>
 <ul>
-<li>For <code>query</code>, <code>param</code>, <code>form</code> <strong>only</strong> fields <strong>with</strong> tags are bound.</li>
+<li>For <code>query</code>, <code>param</code>, <code>header</code>, <code>form</code> <strong>only</strong> fields <strong>with</strong> tags are bound.</li>
 <li>For <code>json</code> and <code>xml</code> can bind to <em>public</em> fields without tags but this is by their standard library implementation.</li>
 <li>Each step can overwrite bound fields from the previous step. This means if your json request has query param
 <code>&amp;name=query</code> and body is <code>{&quot;name&quot;: &quot;body&quot;}</code> then the result will be <code>User{Name: &quot;body&quot;}</code>.</li>
@@ -729,6 +730,11 @@ and <a href="https://golang.org/pkg/net/http/#Request.ParseMultipartForm">MIMEMu
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
 }
 </code></pre></div></li>
+<li>To bind data only from header parameters use following code
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> (<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">DefaultBinder</span>{}).<span style="color:#a6e22e">BindHeaders</span>(<span style="color:#a6e22e">c</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">payload</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+}
+</code></pre></div></li>
 </ul>
 <h3 id="example">Example<a href="#example" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <p>Example below binds the request payload into <code>User</code> struct based on tags:</p>
@@ -747,7 +753,7 @@ and <a href="https://golang.org/pkg/net/http/#Request.ParseMultipartForm">MIMEMu
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">UserDTO</span>{
     <span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">Name</span>,
     <span style="color:#a6e22e">Email</span>: <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">Email</span>,
-    <span style="color:#a6e22e">IsAdmin</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e">// because you could accidentally expose fields that should not be bind
+    <span style="color:#a6e22e">IsAdmin</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e">// because you could accidentally expose fields that should not be bound
 </span><span style="color:#75715e"></span>  }
   <span style="color:#a6e22e">executeSomeBusinessLogic</span>(<span style="color:#a6e22e">user</span>)
   
