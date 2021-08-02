@@ -7,7 +7,7 @@ require (
 	github.com/daaku/go.zipexe v0.0.0-20150329023125-a5fe2436ffcb // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/protobuf v1.2.0 // indirect
-	github.com/gorilla/websocket v1.3.0
+	github.com/gorilla/websocket v1.4.1
 	github.com/kardianos/osext v0.0.0-20170510131534-ae77be60afb1 // indirect
 	github.com/labstack/echo/v4 v4.5.0
 	github.com/labstack/gommon v0.3.0
