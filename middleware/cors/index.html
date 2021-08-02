@@ -686,13 +686,13 @@ data transfers.</p>
 <p><code>e.Use(middleware.CORS())</code></p>
 <h2 id="custom-configuration">Custom Configuration<a href="#custom-configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
 <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">CORSWithConfig</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">CORSConfig</span>{
   <span style="color:#a6e22e">AllowOrigins</span>: []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;https://labstack.com&#34;</span>, <span style="color:#e6db74">&#34;https://labstack.net&#34;</span>},
   <span style="color:#a6e22e">AllowHeaders</span>: []<span style="color:#66d9ef">string</span>{<span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">HeaderOrigin</span>, <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">HeaderContentType</span>, <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">HeaderAccept</span>},
 }))
 </code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">CORSConfig</span> <span style="color:#66d9ef">struct</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">CORSConfig</span> <span style="color:#66d9ef">struct</span> {
   <span style="color:#75715e">// Skipper defines a function to skip middleware.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Skipper</span> <span style="color:#a6e22e">Skipper</span>
 
@@ -735,7 +735,7 @@ data transfers.</p>
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">MaxAge</span> <span style="color:#66d9ef">int</span> <span style="color:#e6db74">`yaml:&#34;max_age&#34;`</span>
 }
 </code></pre></div><p><em>Default Configuration</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultCORSConfig</span> = <span style="color:#a6e22e">CORSConfig</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultCORSConfig</span> = <span style="color:#a6e22e">CORSConfig</span>{
   <span style="color:#a6e22e">Skipper</span>:      <span style="color:#a6e22e">DefaultSkipper</span>,
   <span style="color:#a6e22e">AllowOrigins</span>: []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;*&#34;</span>},
   <span style="color:#a6e22e">AllowMethods</span>: []<span style="color:#66d9ef">string</span>{<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodGet</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodHead</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodPut</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodPatch</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodPost</span>, <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">MethodDelete</span>},

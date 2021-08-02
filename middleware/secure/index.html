@@ -686,7 +686,7 @@ attacks.</p>
 <p><code>e.Use(middleware.Secure())</code></p>
 <h2 id="custom-configuration">Custom Configuration<a href="#custom-configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
 <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">SecureWithConfig</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">SecureConfig</span>{
 	<span style="color:#a6e22e">XSSProtection</span>:         <span style="color:#e6db74">&#34;&#34;</span>,
 	<span style="color:#a6e22e">ContentTypeNosniff</span>:    <span style="color:#e6db74">&#34;&#34;</span>,
@@ -697,7 +697,7 @@ attacks.</p>
 </code></pre></div><p>Passing empty <code>XSSProtection</code>, <code>ContentTypeNosniff</code>, <code>XFrameOptions</code> or <code>ContentSecurityPolicy</code>
 disables that protection.</p>
 <h2 id="configuration">Configuration<a href="#configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">SecureConfig</span> <span style="color:#66d9ef">struct</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">SecureConfig</span> <span style="color:#66d9ef">struct</span> {
   <span style="color:#75715e">// Skipper defines a function to skip middleware.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Skipper</span> <span style="color:#a6e22e">Skipper</span>
 
@@ -744,7 +744,7 @@ disables that protection.</p>
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">ContentSecurityPolicy</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;content_security_policy&#34;`</span>
 }
 </code></pre></div><p><em>Default Configuration</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultSecureConfig</span> = <span style="color:#a6e22e">SecureConfig</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultSecureConfig</span> = <span style="color:#a6e22e">SecureConfig</span>{
   <span style="color:#a6e22e">Skipper</span>:            <span style="color:#a6e22e">DefaultSkipper</span>,
   <span style="color:#a6e22e">XSSProtection</span>:      <span style="color:#e6db74">&#34;1; mode=block&#34;</span>,
   <span style="color:#a6e22e">ContentTypeNosniff</span>: <span style="color:#e6db74">&#34;nosniff&#34;</span>,

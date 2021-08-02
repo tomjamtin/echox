@@ -722,19 +722,19 @@ to <code>echo.Context</code> API.</p>
 example, you can have an admin group which is secured by registering a BasicAuth
 middleware for it.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
 <span style="color:#a6e22e">admin</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Group</span>(<span style="color:#e6db74">&#34;/admin&#34;</span>, <span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuth</span>())
 </code></pre></div><p>You can also add a middleware after creating a group via <code>admin.Use()</code>.</p>
 <h3 id="route-level">Route Level<a href="#route-level" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <p>When defining a new route, you can optionally register middleware just for it.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
 <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/&#34;</span>, &lt;<span style="color:#a6e22e">Handler</span>&gt;, &lt;<span style="color:#a6e22e">Middleware</span><span style="color:#f92672">...</span>&gt;)
 </code></pre></div><h2 id="skipping-middleware">Skipping Middleware<a href="#skipping-middleware" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p>There are cases when you would like to skip a middleware based on some condition,
 for that each middleware has an option to define a function <code>Skipper func(c echo.Context) bool</code>.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
 <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">LoggerWithConfig</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">LoggerConfig</span>{
 	<span style="color:#a6e22e">Skipper</span>: <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) <span style="color:#66d9ef">bool</span> {
 		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">HasPrefix</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>().<span style="color:#a6e22e">Host</span>, <span style="color:#e6db74">&#34;localhost&#34;</span>) {

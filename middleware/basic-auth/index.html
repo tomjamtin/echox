@@ -685,7 +685,7 @@
 <li>For missing or invalid credentials, it sends &ldquo;401 - Unauthorized&rdquo; response.</li>
 </ul>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuth</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) (<span style="color:#66d9ef">bool</span>, <span style="color:#66d9ef">error</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuth</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">c</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">Context</span>) (<span style="color:#66d9ef">bool</span>, <span style="color:#66d9ef">error</span>) {
 	<span style="color:#75715e">// Be careful to use constant time comparison to prevent timing attacks
 </span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">subtle</span>.<span style="color:#a6e22e">ConstantTimeCompare</span>([]byte(<span style="color:#a6e22e">username</span>), []byte(<span style="color:#e6db74">&#34;joe&#34;</span>)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span>
 		<span style="color:#a6e22e">subtle</span>.<span style="color:#a6e22e">ConstantTimeCompare</span>([]byte(<span style="color:#a6e22e">password</span>), []byte(<span style="color:#e6db74">&#34;secret&#34;</span>)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
@@ -695,9 +695,9 @@
 }))
 </code></pre></div><h2 id="custom-configuration">Custom Configuration<a href="#custom-configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuthWithConfig</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuthConfig</span>{}))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Use</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuthWithConfig</span>(<span style="color:#a6e22e">middleware</span>.<span style="color:#a6e22e">BasicAuthConfig</span>{}))
 </code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">BasicAuthConfig</span> <span style="color:#66d9ef">struct</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">BasicAuthConfig</span> <span style="color:#66d9ef">struct</span> {
   <span style="color:#75715e">// Skipper defines a function to skip middleware.
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Skipper</span> <span style="color:#a6e22e">Skipper</span>
 
@@ -710,7 +710,7 @@
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Realm</span> <span style="color:#66d9ef">string</span>
 }
 </code></pre></div><p><em>Default Configuration</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultBasicAuthConfig</span> = <span style="color:#a6e22e">BasicAuthConfig</span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">DefaultBasicAuthConfig</span> = <span style="color:#a6e22e">BasicAuthConfig</span>{
 	<span style="color:#a6e22e">Skipper</span>: <span style="color:#a6e22e">DefaultSkipper</span>,
 }
 </code></pre></div>

@@ -150,8 +150,9 @@ Server server.go
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://echo.labstack.com/cookbook/jwt/</guid>
-      <description>JWT authentication using HS256 algorithm. JWT is retrieved from Authorization request header.  Server using Map claims server.go
- Server using custom claims server.go
+      <description>JWT middleware configuration can be found here.
+This is cookbook for:
+ JWT authentication using HS256 algorithm. JWT is retrieved from Authorization request header.  Server using custom claims server.go
  Server using a user-defined KeyFunc server.go
  Client curl
 Login Login using username and password to retrieve a token.

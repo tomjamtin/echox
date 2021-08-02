@@ -681,7 +681,7 @@
               <h1>Prometheus Middleware</h1>
                 <p>Prometheus middleware generates metrics for HTTP requests.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/prometheus&#34;</span>
@@ -695,7 +695,7 @@
     <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Start</span>(<span style="color:#e6db74">&#34;:1323&#34;</span>))
 }
 </code></pre></div><p><em>Sample Output</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:1323/metrics
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl http://localhost:1323/metrics
 
 <span style="color:#75715e"># HELP echo_request_duration_seconds The HTTP request latencies in seconds.</span>
 <span style="color:#75715e"># TYPE echo_request_duration_seconds summary</span>
@@ -716,7 +716,7 @@ echo_response_size_bytes_count <span style="color:#ae81ff">1</span>
 </code></pre></div><h2 id="custom-configuration">Custom Configuration<a href="#custom-configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><em>Usage</em></p>
 <p>A middleware skipper can be passed to avoid generating metrics to certain URLs:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/prometheus&#34;</span>

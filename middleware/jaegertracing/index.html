@@ -681,7 +681,7 @@
               <h1>Jaeger Tracing Middleware</h1>
                 <p>Trace requests on Echo framework with Jaeger Tracing Middleware.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/jaegertracing&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
@@ -698,7 +698,7 @@
 <h2 id="custom-configuration">Custom Configuration<a href="#custom-configuration" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p>By default, traces are sent to <code>localhost</code> Jaeger agent instance. To configure an external Jaeger, start your application with environment variables.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ JAEGER_AGENT_HOST<span style="color:#f92672">=</span>192.168.1.10 JAEGER_AGENT_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">6831</span> ./myserver
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ JAEGER_AGENT_HOST<span style="color:#f92672">=</span>192.168.1.10 JAEGER_AGENT_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">6831</span> ./myserver
 </code></pre></div><p>The tracer can be initialized with values coming from environment variables. None of the env vars are required
 and all of them can be overriden via direct setting of the property on the configuration object.</p>
 <table>
@@ -787,7 +787,7 @@ variables.</p>
 <h3 id="middleware-skipper">Middleware Skipper<a href="#middleware-skipper" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h3>
 <p>A middleware skipper can be passed to avoid tracing spans to certain URLs:</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
 	<span style="color:#e6db74">&#34;strings&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/jaegertracing&#34;</span>
@@ -814,7 +814,7 @@ variables.</p>
 <p>This is a wrapper function that can be used to seamlessly add a span for
 the duration of the invoked function. There is no need to change function arguments.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/jaegertracing&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>
@@ -843,7 +843,7 @@ the duration of the invoked function. There is no need to change function argume
 <p>For more control over the Span, the function <code>CreateChildSpan</code> can be called
 giving control on data to be appended to the span like log messages, baggages and tags.</p>
 <p><em>Usage</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 <span style="color:#f92672">import</span> (
     <span style="color:#e6db74">&#34;github.com/labstack/echo-contrib/jaegertracing&#34;</span>
     <span style="color:#e6db74">&#34;github.com/labstack/echo/v4&#34;</span>

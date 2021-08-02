@@ -689,7 +689,7 @@
 </ul>
 <h2 id="http-server">HTTP Server<a href="#http-server" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><code>Echo.Start</code> is convenience method that starts http server with Echo serving requests.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
@@ -698,7 +698,7 @@
   }
 }
 </code></pre></div><p>Following is equivalent to <code>Echo.Start</code> previous example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
@@ -714,7 +714,7 @@
 </code></pre></div><h2 id="https-server">HTTPS Server<a href="#https-server" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><code>Echo.StartTLS</code> is convenience method that starts HTTPS server with Echo serving requests on given address and uses
 <code>server.crt</code> and <code>server.key</code> as TLS certificate pair.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
@@ -723,7 +723,7 @@
   }
 }
 </code></pre></div><p>Following is equivalent to <code>Echo.StartTLS</code> previous example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
@@ -743,7 +743,7 @@
 <p>See <a href="/cooobook/auto-tls#server">Auto TLS Recipe</a></p>
 <h2 id="http2-cleartext-server-http2-over-http">HTTP/2 Cleartext Server (HTTP2 over HTTP)<a href="#http2-cleartext-server-http2-over-http" class="hanchor" ariaLabel="Anchor"> 🔗</a> </h2>
 <p><code>Echo.StartH2CServer</code> is convenience method that starts a custom HTTP/2 cleartext server on given address</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
@@ -757,7 +757,7 @@
   }
 }
 </code></pre></div><p>Following is equivalent to <code>Echo.StartH2CServer</code> previous example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
   <span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">echo</span>.<span style="color:#a6e22e">New</span>()
   <span style="color:#75715e">// add middleware and routes
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
