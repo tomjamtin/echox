@@ -169,7 +169,7 @@ func save(c echo.Context) error {
 
 Run the following command.
 ```sh
-$ curl -F "name=Joe Smith" -F "avatar=@/path/to/your/avatar.png" http://localhost:1323/save
+$ curl -F "name=Joe Smith" -OF "avatar=@/path/to/your/avatar.png" http://localhost:1323/save
 // => <b>Thank you! Joe Smith</b>
 ```
  
